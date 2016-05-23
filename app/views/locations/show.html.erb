@@ -1,0 +1,14 @@
+<h1>Location Show page</h1>
+<p><%= link_to 'Home', root_path %></p>
+<p><%= link_to 'Edit', edit_location_path(@location) %></p>
+<p>----------------------------</p>
+
+<div class="location-show-page">
+  <p>Street: <%= @location.street %></p>
+  <p>Suburb: <%= @location.suburb %></p>
+  <p>State: <%= @location.state %></p>
+  <p>Country: <%= @location.country %></p>
+  <p>Postcode: <%= @location.postcode %></p>
+  <p>Latitude: <%= @location.latitude %></p>
+  <p>Longitude: <%= @location.longitude %></p>
+</div>

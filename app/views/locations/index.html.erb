@@ -1,0 +1,13 @@
+<h1>Index page</h1>
+
+<% @locations.each do |location| %>
+  <p>Street: <%= location.street %></p>
+  <p>Suburb: <%= location.suburb %></p>
+  <p>State: <%= location.state %></p>
+  <p>Country: <%= location.country %></p>
+  <p>Postcode: <%= location.postcode %></p>
+  <p>Lat: <%= location.latitude %></p>
+  <p>Long: <%= location.longitude %></p>
+  <p><%= link_to 'View this location', location_path(location) %></p>
+  <p>----------------------------</p>
+<% end %>

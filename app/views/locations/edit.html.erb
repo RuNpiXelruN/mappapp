@@ -1,0 +1,13 @@
+<h1>Edit Location page</h1>
+<p><%= link_to 'View all locations', root_path %></p>
+<p><%= link_to 'Back', location_path(@location) %></p>
+<p>----------------------------</p>
+
+<%= form_for @location do |f| %>
+  <%= f.text_field :street, placeholder: 'Street' %>
+  <%= f.text_field :suburb, placeholder: 'Suburb' %>
+  <%= f.text_field :state, placeholder: 'State' %>
+  <%= f.text_field :country, placeholder: 'Country' %>
+  <%= f.text_field :postcode, placeholder: 'Postcode' %>
+  <%= f.submit %>
+<% end %>
