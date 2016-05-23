@@ -3,6 +3,6 @@ class Location < ApplicationRecord
   after_validation :geocode
 
   def address
-    [:street, :suburb, :state, :country, :postcode].compact.join(', ')
+    [street, suburb, state, country, postcode].compact.join(', ')
   end
 end

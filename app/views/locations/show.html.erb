@@ -1,6 +1,7 @@
 <h1>Location Show page</h1>
 <p><%= link_to 'Home', root_path %></p>
 <p><%= link_to 'Edit', edit_location_path(@location) %></p>
+<p><%= link_to 'Back', locations_path %></p>
 <p>----------------------------</p>
 
 <div class="location-show-page">
@@ -11,4 +12,27 @@
   <p>Postcode: <%= @location.postcode %></p>
   <p>Latitude: <%= @location.latitude %></p>
   <p>Longitude: <%= @location.longitude %></p>
+</div>
+
+<div id="map">
+  <script>
+    function initMap() {
+      var myLatLng = {lat: <%= @location.latitude %>, lng: <%= @location.longitude %>};
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: myLatLng
+      });
+
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Hello World!'
+      });
+    }
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCi4Ad_EMQ0ikqNAKQm0VoBdNuaejQ6OFc&callback=initMap">
+  </script>
 </div>
